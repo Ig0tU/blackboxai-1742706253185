@@ -1,0 +1,37 @@
+{
+    "claude-3-sonnet": {
+        "baseModel": "claude-3-sonnet",
+        "tokens": 200000,
+        "owned_by": "Anthropic",
+        "endpoints": ["/v1/chat/completions"],
+        "premium_model": true
+    },
+    "gpt-4": {
+        "baseModel": "gpt-4",
+        "tokens": 128000,
+        "owned_by": "OpenAI",
+        "endpoints": ["/v1/chat/completions"],
+        "premium_model": true
+    },
+    "gemini-pro": {
+        "baseModel": "gemini-pro",
+        "tokens": 100000,
+        "owned_by": "Google",
+        "endpoints": ["/v1/chat/completions"],
+        "premium_model": true
+    },
+    "mistral-large": {
+        "baseModel": "mistral-large",
+        "tokens": 32000,
+        "owned_by": "Mistral AI",
+        "endpoints": ["/v1/chat/completions"],
+        "premium_model": false
+    },
+    "claude-3-haiku": {
+        "baseModel": "claude-3-haiku",
+        "tokens": 200000,
+        "owned_by": "Anthropic",
+        "endpoints": ["/v1/chat/completions"],
+        "premium_model": true
+    }
+}
