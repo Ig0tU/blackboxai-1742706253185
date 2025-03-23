@@ -1,0 +1,10 @@
+**/__pycache__/
+*.egg-info/
+build/
+dist/
+.tox/
+.idea/
+playground/
+examples/
+langchain/
+Dockerfile
