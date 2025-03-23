@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@poe_tools/App_Creator</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-gray-900">@poe_tools/App_Creator</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="clearChat" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                <button id="settings" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex gap-6">
+        <!-- Sidebar -->
+        <aside class="w-64 hidden lg:block">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="text-lg font-semibold mb-4">Conversations</h2>
+                <div id="conversationHistory" class="space-y-2">
+                    <!-- Conversation history will be populated here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Chat Area -->
+        <div class="flex-1">
+            <div class="bg-white rounded-lg shadow min-h-[600px] flex flex-col">
+                <!-- Model Selector -->
+                <div class="border-b p-4">
+                    <select id="modelSelector" class="w-full p-2 border rounded-lg">
+                        <option value="" disabled selected>Select a model</option>
+                    </select>
+                </div>
+
+                <!-- Messages -->
+                <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4">
+                    <!-- Messages will be populated here -->
+                </div>
+
+                <!-- Input Area -->
+                <div class="border-t p-4">
+                    <div class="flex items-start space-x-4">
+                        <textarea 
+                            id="messageInput" 
+                            rows="3" 
+                            class="flex-1 p-2 border rounded-lg resize-none"
+                            placeholder="Type your message here..."
+                        ></textarea>
+                        <button 
+                            id="sendMessage" 
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                            disabled
+                        >
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="errorToast" class="hidden fixed bottom-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg">
+        <span id="errorMessage"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
